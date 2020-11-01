@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:url value="/" var="servletHome"/>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,11 +12,15 @@
 	</head>
 	
 	<body>
+		<a href="${servletHome}">Home</a>
+	
+		<h2>Instituições:</h2>
 		<ul>
-		
-			<li>Instituição A</li>
-			<li>Instituição B</li>
-		
+			<c:forEach items="${instituicoes}" var="instituicao">
+				<li>Nome: ${instituicao.nome} - Reitor: ${instituicao.reitor} - CNPJ: ${instituicao.cnpj}</li>		
+				<br>
+			</c:forEach>
+			
 		</ul>
 	</body>
 </html>
