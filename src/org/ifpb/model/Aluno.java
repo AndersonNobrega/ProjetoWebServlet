@@ -44,6 +44,7 @@ public class Aluno {
 		this.cpf = cpf;
 	}
 	
+	@Override
 	public String toString() {
 		return "Nome: " + this.getNome() + " RG: " + this.getRg() + " CPF: " + this.getCpf();
 	}
