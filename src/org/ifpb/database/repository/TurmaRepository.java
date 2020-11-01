@@ -6,25 +6,24 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import org.ifpb.database.DBConnection;
-import org.ifpb.model.Instituicao;
+import org.ifpb.model.Turma;
 
-public class InstituicaoRepository implements Repository<Instituicao> {
-	private final String SELECT_STATEMENT = "SELECT * FROM instituicao";
-	private final String SELECT_BY_ID_STATEMENT = "SELECT * FROM instituicao WHERE id=?";
-	private final String INSERT_STATEMENT = "INSERT INTO instituicao VALUES(default, ?, ?, ?)";
-	private final String UPDATE_STATEMENT = "UPDATE instituicao SET nome=?,reitor=?,cnpj=? WHERE id=?";
-	private final String DELETE_STATEMENT = "DELETE FROM instituicao WHERE id=?";
-	
+public class TurmaRepository implements Repository<Turma> {
+	private final String SELECT_STATEMENT = "SELECT * FROM turma";
+	private final String SELECT_BY_ID_STATEMENT = "SELECT * FROM turma WHERE id=?";
+	private final String INSERT_STATEMENT = "INSERT INTO turma VALUES(default, ?, ?)";
+	private final String UPDATE_STATEMENT = "UPDATE turma SET vagas=? WHERE id=?";
+	private final String DELETE_STATEMENT = "DELETE FROM turma WHERE id=?";
+
 	@Override
-	public void create(Instituicao instituicao) {
+	public void create(Turma turma) {
 		try {
 			Connection connection = DBConnection.initializeDatabase();
 			
 			PreparedStatement statement = connection.prepareStatement(this.INSERT_STATEMENT);
 			
-			statement.setString(1, instituicao.getNome());
-			statement.setString(2, instituicao.getReitor());
-			statement.setString(3, instituicao.getCnpj());
+			statement.setInt(1, turma.getVagas());
+			statement.setInt(2, turma.getCursoOfertadoId());
 
 			statement.executeUpdate();
 
@@ -34,7 +33,25 @@ public class InstituicaoRepository implements Repository<Instituicao> {
 			e.printStackTrace();
 		}
 	}
-	
+
+	@Override
+	public void update(int id, Turma turma) {
+		try {
+			Connection connection = DBConnection.initializeDatabase();
+			
+			PreparedStatement statement = connection.prepareStatement(this.UPDATE_STATEMENT);
+		
+			statement.setInt(1, turma.getVagas());
+			
+			statement.executeUpdate();
+
+			statement.close();
+			connection.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	@Override
 	public void delete(int id) {
 		try {
@@ -52,30 +69,9 @@ public class InstituicaoRepository implements Repository<Instituicao> {
 			e.printStackTrace();
 		}
 	}
-	
-	@Override
-	public void update(int id, Instituicao instituicao) {
-		try {
-			Connection connection = DBConnection.initializeDatabase();
-			
-			PreparedStatement statement = connection.prepareStatement(this.UPDATE_STATEMENT);
-		
-			statement.setString(1, instituicao.getNome());
-			statement.setString(2, instituicao.getReitor());
-			statement.setString(3, instituicao.getCnpj());
-			statement.setInt(4, id);
-			
-			statement.executeUpdate();
-
-			statement.close();
-			connection.close();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	@Override
-	public ArrayList<Instituicao> findAll() {
+	public ArrayList<Turma> findAll() {
 		try {
 			Connection connection = DBConnection.initializeDatabase();
 			
@@ -83,24 +79,24 @@ public class InstituicaoRepository implements Repository<Instituicao> {
 			
 			ResultSet result = statement.executeQuery();
 			
-			ArrayList<Instituicao> listaInstituicao = new ArrayList<>();
+			ArrayList<Turma> listaTurma = new ArrayList<>();
 			while(result.next()) {
-				listaInstituicao.add(new Instituicao(result.getString(2), result.getString(3), result.getString(4)));
+				listaTurma.add(new Turma(result.getInt(2), result.getInt(3)));
 			}
 
 			statement.close();
 			connection.close();
 			
-			return listaInstituicao;
+			return listaTurma;
 		} catch(Exception e) {
 			e.printStackTrace();
 			
 			return null;
 		}
 	}
-	
+
 	@Override
-	public ArrayList<Instituicao> findById(int id) {
+	public ArrayList<Turma> findById(int id) {
 		try {
 			Connection connection = DBConnection.initializeDatabase();
 			
@@ -110,19 +106,20 @@ public class InstituicaoRepository implements Repository<Instituicao> {
 			
 			ResultSet result = statement.executeQuery();
 			
-			ArrayList<Instituicao> listaInstituicao = new ArrayList<>();
+			ArrayList<Turma> listaTurma = new ArrayList<>();
 			while(result.next()) {
-				listaInstituicao.add(new Instituicao(result.getString(2), result.getString(3), result.getString(4)));
+				listaTurma.add(new Turma(result.getInt(2), result.getInt(3)));
 			}
 
 			statement.close();
 			connection.close();
 			
-			return listaInstituicao;
+			return listaTurma;
 		} catch(Exception e) {
 			e.printStackTrace();
 			
 			return null;
 		}
 	}
+
 }
