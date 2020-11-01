@@ -6,23 +6,26 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import org.ifpb.database.DBConnection;
-import org.ifpb.model.Curso;
+import org.ifpb.model.CursoOfertado;
 
-public class CursoRepository implements Repository<Curso> {
-	private final String SELECT_STATEMENT = "SELECT * FROM curso";
-	private final String SELECT_BY_ID_STATEMENT = "SELECT * FROM curso WHERE id=?";
-	private final String INSERT_STATEMENT = "INSERT INTO curso VALUES(default, ?)";
-	private final String UPDATE_STATEMENT = "UPDATE curso SET nome=? WHERE id=?";
-	private final String DELETE_STATEMENT = "DELETE FROM curso WHERE id=?";
-
+public class CursoOfertadoRepository implements Repository<CursoOfertado> {
+	private final String SELECT_STATEMENT = "SELECT * FROM curso_ofertado";
+	private final String SELECT_BY_ID_STATEMENT = "SELECT * FROM curso_ofertado WHERE id=?";
+	private final String INSERT_STATEMENT = "INSERT INTO curso_ofertado VALUES(default, ?, ?, ?, ?)";
+	private final String UPDATE_STATEMENT = "UPDATE curso_ofertado SET coordenador=?,vagas=? WHERE id=?";
+	private final String DELETE_STATEMENT = "DELETE FROM curso_ofertado WHERE id=?";
+	
 	@Override
-	public void create(Curso curso) {
+	public void create(CursoOfertado cursoOfertado) {
 		try {
 			Connection connection = DBConnection.initializeDatabase();
 			
 			PreparedStatement statement = connection.prepareStatement(this.INSERT_STATEMENT);
 			
-			statement.setString(1, curso.getNome());
+			statement.setString(1, cursoOfertado.getCoordenador());
+			statement.setInt(2, cursoOfertado.getVagas());
+			statement.setInt(3, cursoOfertado.getInstituicaoId());
+			statement.setInt(4, cursoOfertado.getCursoId());
 
 			statement.executeUpdate();
 
@@ -34,13 +37,14 @@ public class CursoRepository implements Repository<Curso> {
 	}
 
 	@Override
-	public void update(int id, Curso curso) {
+	public void update(int id, CursoOfertado cursoOfertado) {
 		try {
 			Connection connection = DBConnection.initializeDatabase();
 			
 			PreparedStatement statement = connection.prepareStatement(this.UPDATE_STATEMENT);
 		
-			statement.setString(1, curso.getNome());
+			statement.setString(1, cursoOfertado.getCoordenador());
+			statement.setInt(2, cursoOfertado.getVagas());
 
 			statement.executeUpdate();
 
@@ -70,7 +74,7 @@ public class CursoRepository implements Repository<Curso> {
 	}
 
 	@Override
-	public ArrayList<Curso> findAll() {
+	public ArrayList<CursoOfertado> findAll() {
 		try {
 			Connection connection = DBConnection.initializeDatabase();
 			
@@ -78,15 +82,15 @@ public class CursoRepository implements Repository<Curso> {
 			
 			ResultSet result = statement.executeQuery();
 			
-			ArrayList<Curso> listaCurso = new ArrayList<>();
+			ArrayList<CursoOfertado> listaCursoOfertado = new ArrayList<>();
 			while(result.next()) {
-				listaCurso.add(new Curso(result.getString(2)));
+				listaCursoOfertado.add(new CursoOfertado(result.getString(2), result.getInt(3), result.getInt(4), result.getInt(5)));
 			}
 
 			statement.close();
 			connection.close();
 			
-			return listaCurso;
+			return listaCursoOfertado;
 		} catch(Exception e) {
 			e.printStackTrace();
 			
@@ -95,7 +99,7 @@ public class CursoRepository implements Repository<Curso> {
 	}
 
 	@Override
-	public ArrayList<Curso> findById(int id) {
+	public ArrayList<CursoOfertado> findById(int id) {
 		try {
 			Connection connection = DBConnection.initializeDatabase();
 			
@@ -105,15 +109,15 @@ public class CursoRepository implements Repository<Curso> {
 			
 			ResultSet result = statement.executeQuery();
 			
-			ArrayList<Curso> listaCurso = new ArrayList<>();
+			ArrayList<CursoOfertado> listaCursoOfertado = new ArrayList<>();
 			while(result.next()) {
-				listaCurso.add(new Curso(result.getString(2)));
+				listaCursoOfertado.add(new CursoOfertado(result.getString(2), result.getInt(3), result.getInt(4), result.getInt(5)));
 			}
 
 			statement.close();
 			connection.close();
 			
-			return listaCurso;
+			return listaCursoOfertado;
 		} catch(Exception e) {
 			e.printStackTrace();
 			
