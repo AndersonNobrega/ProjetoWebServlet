@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:url value="/instituicao/atualizar" var="servletAtualizarInstituicao"/>
+
 <!DOCTYPE html>
 <html>
 	
@@ -9,8 +12,10 @@
 	</head>
 	
 	<body>
-		<form>
-		CNPJ:<input type="text" name="nome"/>
+	
+		<h2>Atualizar Instituição:</h2>
+		<form action="servletAtualizarInstituicao" method="POST">
+		<b>CNPJ: </b><input type="text" name="nome"/>
 		<br>
 		<input type="submit"/>
 		</form>

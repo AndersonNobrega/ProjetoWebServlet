@@ -1,6 +1,8 @@
 package org.ifpb.servlet.instituicao;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,10 +32,8 @@ public class CriarInstituicaoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//this.instituicaoRepository.findAll();
-		for(Instituicao instituicao : this.instituicaoRepository.findAll()) {
-			System.out.println(instituicao);
-		}
+		RequestDispatcher rd = request.getRequestDispatcher("/home/instituicao/cad_insti.jsp");
+		rd.forward(request, response);
 	}
 
 	/**
@@ -45,6 +45,8 @@ public class CriarInstituicaoServlet extends HttpServlet {
 		String cnpj = request.getParameter("cnpj");
 		
 		this.instituicaoRepository.create(new Instituicao(nome, reitor, cnpj));
+		
+		response.sendRedirect("/home/instituicao");
 	}
 
 }

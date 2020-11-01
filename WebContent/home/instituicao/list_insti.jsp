@@ -3,6 +3,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:url value="/" var="servletHome"/>
+<c:url value="/instituicao/criar" var="servletCriarInstituicao"/>
+<c:url value="/instituicao/remover" var="servletRemoverInstituicao"/>
+<c:url value="/instituicao/atualizar" var="servletAtualizarInstituicao"/>
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +23,8 @@
 				<li>Nome: ${instituicao.nome} - Reitor: ${instituicao.reitor} - CNPJ: ${instituicao.cnpj}</li>		
 				<br>
 			</c:forEach>
-			
 		</ul>
+		
+		<a href="${servletCriarInstituicao}">Cadastrar</a> | <a href="${servletAtualizarInstituicao}">Atualizar</a> | <a href="${servletRemoverInstituicao}">Remover</a>
 	</body>
 </html>
