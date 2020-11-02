@@ -6,6 +6,7 @@
 <c:url value="/instituicao/criar" var="servletCriarInstituicao"/>
 <c:url value="/instituicao/remover" var="servletRemoverInstituicao"/>
 <c:url value="/instituicao/atualizar" var="servletAtualizarInstituicao"/>
+<c:url value="/instituicao/info" var="servletInfoInstituicao"/>
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,7 @@
 		<h2>Instituições:</h2>
 		<ul>
 			<c:forEach items="${instituicoes}" var="instituicao">
-				<li>ID: ${instituicao.id} - Nome: ${instituicao.nome} - Reitor: ${instituicao.reitor} - CNPJ: ${instituicao.cnpj}</li>		
+				<li>ID: ${instituicao.id} - Nome: ${instituicao.nome} - Reitor: ${instituicao.reitor} - CNPJ: ${instituicao.cnpj} <a href="/home/instituicao/info?id=${instituicao.id}">Mais Informações</a></li>
 				<br>
 			</c:forEach>
 		</ul>
