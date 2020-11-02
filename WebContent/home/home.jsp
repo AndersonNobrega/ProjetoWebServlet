@@ -5,6 +5,10 @@
 <c:url value="/instituicao/criar" var="servletCriarInstituicao"/>
 <c:url value="/instituicao/remover" var="servletRemoverInstituicao"/>
 <c:url value="/instituicao/atualizar" var="servletAtualizarInstituicao"/>
+<c:url value="/curso" var="servletCurso"/>
+<c:url value="/curso/criar" var="servletCriarCurso"/>
+<c:url value="/curso/remover" var="servletRemoverCurso"/>
+<c:url value="/curso/atualizar" var="servletAtualizarCurso"/>
 
 <!DOCTYPE html>
 <html>
@@ -30,13 +34,13 @@
 		</ul>
 		<h2>Curso</h2>
 		<ul>
-			<li><a href="http://localhost:8080/home/home/curso/list_cursos.jsp">Listar Cursos</a></li>
+			<li><a href="${servletCurso}">Listar Cursos</a></li>
 			<br>
-			<li><a href="http://localhost:8080/home/home/curso/cad_curso.jsp">Cadastrar Curso</a></li>
+			<li><a href="${servletCriarCurso}">Cadastrar Curso</a></li>
 			<br>
-			<li><a href="http://localhost:8080/home/home/curso/att_curso.jsp">Atualizar Curso</a></li>
+			<li><a href="${servletAtualizarCurso}">Atualizar Curso</a></li>
 			<br>
-			<li><a href="http://localhost:8080/home/home/curso/rm_curso.jsp">Remover Curso</a></li>
+			<li><a href="${servletRemoverCurso}">Remover Curso</a></li>
 			<br>
 		</ul>
 		

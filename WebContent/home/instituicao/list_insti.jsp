@@ -3,7 +3,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:url value="/" var="servletHome"/>
-<c:url value="/instituicao" var="servletInstituicao"/>
 <c:url value="/instituicao/criar" var="servletCriarInstituicao"/>
 <c:url value="/instituicao/remover" var="servletRemoverInstituicao"/>
 <c:url value="/instituicao/atualizar" var="servletAtualizarInstituicao"/>

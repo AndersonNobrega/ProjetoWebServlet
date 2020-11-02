@@ -41,6 +41,7 @@ public class CursoRepository implements Repository<Curso> {
 			PreparedStatement statement = connection.prepareStatement(this.UPDATE_STATEMENT);
 		
 			statement.setString(1, curso.getNome());
+			statement.setInt(2, id);
 
 			statement.executeUpdate();
 
@@ -80,7 +81,7 @@ public class CursoRepository implements Repository<Curso> {
 			
 			ArrayList<Curso> listaCurso = new ArrayList<>();
 			while(result.next()) {
-				listaCurso.add(new Curso(result.getString(2)));
+				listaCurso.add(new Curso(result.getInt(1), result.getString(2)));
 			}
 
 			statement.close();
@@ -107,7 +108,7 @@ public class CursoRepository implements Repository<Curso> {
 			
 			ArrayList<Curso> listaCurso = new ArrayList<>();
 			while(result.next()) {
-				listaCurso.add(new Curso(result.getString(2)));
+				listaCurso.add(new Curso(result.getInt(1), result.getString(2)));
 			}
 
 			statement.close();
