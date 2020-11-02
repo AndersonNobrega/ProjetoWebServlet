@@ -5,14 +5,14 @@
 	
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Insert title here</title>
+		<title>Cadastra Turma</title>
 	</head>
 	
 	<body>
 		<form>
-			Nome:<input type="text" name="nome"/>
+			Nome:<input type="number" name="vagas"/>
 			<br>
-			ID:<input type="text" name="num"/>
+			ID:<input type="number" name="cursoOfertadoId"/>
 			<br>
 			<input type="submit"/>
 		</form>

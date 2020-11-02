@@ -1,4 +1,4 @@
-package org.ifpb.servlet.aluno;
+package org.ifpb.servlet.turma;
 
 import java.io.IOException;
 
@@ -9,29 +9,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.ifpb.database.repository.AlunoRepository;
+import org.ifpb.database.repository.TurmaRepository;
+import org.ifpb.model.Turma;
 
 /**
- * Servlet implementation class RemoveAluno
+ * Servlet implementation class CriaTurma
  */
-@WebServlet("/RemoveAluno")
-public class RemoveAluno extends HttpServlet {
+@WebServlet("/CriaTurma")
+public class CriarTurmaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private final AlunoRepository alunoRepository;
+	private final TurmaRepository turmaRepository;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RemoveAluno() {
-		super();
-		this.alunoRepository = new AlunoRepository();
+    public CriarTurmaServlet() {
+    	super();
+		this.turmaRepository = new TurmaRepository();        
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("turma/aluno/rm_aluno.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/instituicao/turma/cad_turma.jsp");
 		rd.forward(request, response);
 	}
 
@@ -39,9 +40,12 @@ public class RemoveAluno extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		this.alunoRepository.delete(id);
-		response.sendRedirect("/home/instituicao");
+		int vaga = Integer.parseInt(request.getParameter("vagas"));
+		int cursoOfertadoId = Integer.parseInt(request.getParameter("cursoOfertadoId"));
+		
+		this.turmaRepository.create(new Turma(vaga, cursoOfertadoId));
+		
+		response.sendRedirect("/home/turma");
 	}
 
 }

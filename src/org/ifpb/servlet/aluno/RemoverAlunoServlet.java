@@ -10,20 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.ifpb.database.repository.AlunoRepository;
-import org.ifpb.model.Aluno;
 
 /**
- * Servlet implementation class AtualizaAluno
+ * Servlet implementation class RemoveAluno
  */
-@WebServlet("/AtualizaAluno")
-public class AtualizaAluno extends HttpServlet {
+@WebServlet("/RemoveAluno")
+public class RemoverAlunoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final AlunoRepository alunoRepository;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AtualizaAluno() {
+    public RemoverAlunoServlet() {
 		super();
 		this.alunoRepository = new AlunoRepository();
     }
@@ -32,7 +31,7 @@ public class AtualizaAluno extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/home/instituicao/att_insti.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("turma/aluno/rm_aluno.jsp");
 		rd.forward(request, response);
 	}
 
@@ -41,11 +40,8 @@ public class AtualizaAluno extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
-		String nome = request.getParameter("nome");
-		String rg = request.getParameter("reitor");
-		String cpf = request.getParameter("cnpj");
-		
-		this.alunoRepository.update(id, new Aluno(nome,rg,cpf));
+		this.alunoRepository.delete(id);
+		response.sendRedirect("/home/instituicao");
 	}
 
 }

@@ -1,4 +1,4 @@
-package org.ifpb.servlet.aluno;
+package org.ifpb.servlet.turma;
 
 import java.io.IOException;
 
@@ -8,32 +8,33 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.ifpb.database.repository.AlunoRepository;
+
+import org.ifpb.database.repository.TurmaRepository;
 
 /**
- * Servlet implementation class ListaAlunosServlet
+ * Servlet implementation class ListarTurmaServlet
  */
-@WebServlet("/aluno")
-public class ListaAlunosServlet extends HttpServlet {
+@WebServlet("/turma")
+public class ListarTurmaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private AlunoRepository alunoRepository;
+	private final TurmaRepository turmaRepository;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListaAlunosServlet() {
+    public ListarTurmaServlet() {
         super();
-    	this.alunoRepository = new AlunoRepository();	
+		this.turmaRepository = new TurmaRepository();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/turma/aluno/list_aluno.jsp");
-	
-		request.setAttribute("instituicoes", this.alunoRepository.findAll());
+		RequestDispatcher rd = request.getRequestDispatcher("/instituicao/turma/list_turma.jsp");
+
+		request.setAttribute("instituicoes", this.turmaRepository.findAll());
 		rd.forward(request, response);
 	}
 }

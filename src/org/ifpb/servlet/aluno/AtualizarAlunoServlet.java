@@ -12,40 +12,40 @@ import javax.servlet.http.HttpServletResponse;
 import org.ifpb.database.repository.AlunoRepository;
 import org.ifpb.model.Aluno;
 
-
-@WebServlet("/CriaAluno")
-public class CriaAlunoServlet extends HttpServlet {
+/**
+ * Servlet implementation class AtualizaAluno
+ */
+@WebServlet("/AtualizaAluno")
+public class AtualizarAlunoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private final AlunoRepository alunoRepository;   
+	private final AlunoRepository alunoRepository;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CriaAlunoServlet() {
-    	super();
-    	this.alunoRepository = new AlunoRepository();	
+    public AtualizarAlunoServlet() {
+		super();
+		this.alunoRepository = new AlunoRepository();
     }
-    
-    /**
+
+	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/turma/aluno/cad_aluno.jsp");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("/home/instituicao/att_insti.jsp");
 		rd.forward(request, response);
-		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("id"));
 		String nome = request.getParameter("nome");
-		String rg = request.getParameter("rg");
-		String cpf = request.getParameter("cpf");
+		String rg = request.getParameter("reitor");
+		String cpf = request.getParameter("cnpj");
 		
-		this.alunoRepository.create(new Aluno(nome, rg, cpf));
-		
-		response.sendRedirect("/home/aluno");
-		
+		this.alunoRepository.update(id, new Aluno(nome,rg,cpf));
 	}
 
 }
