@@ -85,7 +85,7 @@ public class InstituicaoRepository implements Repository<Instituicao> {
 			
 			ArrayList<Instituicao> listaInstituicao = new ArrayList<>();
 			while(result.next()) {
-				listaInstituicao.add(new Instituicao(result.getString(2), result.getString(3), result.getString(4)));
+				listaInstituicao.add(new Instituicao(result.getInt(1), result.getString(2), result.getString(3), result.getString(4)));
 			}
 
 			statement.close();
@@ -112,7 +112,7 @@ public class InstituicaoRepository implements Repository<Instituicao> {
 			
 			ArrayList<Instituicao> listaInstituicao = new ArrayList<>();
 			while(result.next()) {
-				listaInstituicao.add(new Instituicao(result.getString(2), result.getString(3), result.getString(4)));
+				listaInstituicao.add(new Instituicao(result.getInt(1), result.getString(2), result.getString(3), result.getString(4)));
 			}
 
 			statement.close();

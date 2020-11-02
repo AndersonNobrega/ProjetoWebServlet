@@ -32,7 +32,7 @@ public class AtualizarInstituicaoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/home/instituicao/rm_insti.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/home/instituicao/att_insti.jsp");
 		rd.forward(request, response);
 	}
 
@@ -46,6 +46,8 @@ public class AtualizarInstituicaoServlet extends HttpServlet {
 		String cnpj = request.getParameter("cnpj");
 		
 		this.instituicaoRepository.update(id, new Instituicao(nome, reitor, cnpj));
+		
+		response.sendRedirect("/home/instituicao");
 	}
 
 }

@@ -17,10 +17,10 @@
 	
 		<h2>Remover Instituições:</h2>
 	
-		<form action="${servletRemoverInstituicao}" action="POST">
-		<b>CNPJ: </b> <input type="text" name="nome"/>
-		<br>
-		<input type="submit"/>
+		<form action="${servletRemoverInstituicao}" method="POST">
+			<b>ID: </b> <input type="text" name="id"/>
+			<br><br>
+			<input type="submit"/>
 		</form>
 	</body>
 	

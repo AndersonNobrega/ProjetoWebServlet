@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.ifpb.database.repository.InstituicaoRepository;
-import org.ifpb.model.Instituicao;
 
 /**
  * Servlet implementation class RemoverInstituicaoServlet
@@ -43,6 +42,8 @@ public class RemoverInstituicaoServlet extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		
 		this.instituicaoRepository.delete(id);
+		
+		response.sendRedirect("/home/instituicao");
 	}
 
 }

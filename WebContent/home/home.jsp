@@ -23,9 +23,10 @@
 			<br>
 			<li><a href="${servletCriarInstituicao}">Cadastrar Instituição</a></li>
 			<br>
+			<li><a href="${servletAtualizarInstituicao}">Atualizar Instituição</a></li>
+			<br>
 			<li><a href="${servletRemoverInstituicao}">Remover Instituição</a></li>
 			<br>
-			<li><a href="${servletAtualizarInstituicao}">Atualizar Instituição</a></li>
 		</ul>
 		<h2>Curso</h2>
 		<ul>
@@ -33,9 +34,10 @@
 			<br>
 			<li><a href="http://localhost:8080/home/home/curso/cad_curso.jsp">Cadastrar Curso</a></li>
 			<br>
+			<li><a href="http://localhost:8080/home/home/curso/att_curso.jsp">Atualizar Curso</a></li>
+			<br>
 			<li><a href="http://localhost:8080/home/home/curso/rm_curso.jsp">Remover Curso</a></li>
 			<br>
-			<li><a href="http://localhost:8080/home/home/curso/att_curso.jsp">Atualizar Curso</a></li>
 		</ul>
 		
 	</body>
