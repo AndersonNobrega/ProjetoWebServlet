@@ -19,9 +19,9 @@
 		<h2>Cursos</h2>
 		<a href="http://localhost:8080/home/instituicao/curso/ofer_curso.jsp">Ofertar Curso</a>
 		<br><br>
-		<a href="http://localhost:8080/home/instituicao/curso/rm_curso.jsp">Remover Curso</a>
+		<a href="http://localhost:8080/home/curso/remover">Remover Curso</a>
 		<br><br>
-		<a href="http://localhost:8080/home/instituicao/curso/list_curso.jsp">Listar Cursos</a>
+		<a href="http://localhost:8080/home/curso">Listar Cursos</a>
 		<br><br>
 		
 		<h2>Turma</h2>

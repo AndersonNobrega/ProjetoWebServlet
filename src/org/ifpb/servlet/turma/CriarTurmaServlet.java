@@ -15,7 +15,7 @@ import org.ifpb.model.Turma;
 /**
  * Servlet implementation class CriaTurma
  */
-@WebServlet("/CriaTurma")
+@WebServlet("/turma/criar")
 public class CriarTurmaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final TurmaRepository turmaRepository;

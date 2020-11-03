@@ -22,7 +22,7 @@
 		<h2>Cursos:</h2>
 		<ul>
 			<c:forEach items="${cursos}" var="curso">
-				<li>ID: ${curso.id} - Nome: ${curso.nome}</li>		
+				<li>ID: ${curso.id} - Nome: ${curso.nome} <a href="/home/curso/info?id=${curso.id}"> Mais Informações</a></li>		
 				<br>
 			</c:forEach>
 		</ul>

@@ -13,8 +13,8 @@ public class DBConnection {
 	    
 	    // Database name to access
 	    String dbName = "projetoweb";
-	    String dbUsername = "lug";
-	    String dbPassword = "password";
+	    String dbUsername = "ranzeus";
+	    String dbPassword = "zeus1998";
 	  
 	    Class.forName(dbDriver);
 	    Connection con = DriverManager.getConnection(dbURL + dbName, dbUsername, dbPassword);
