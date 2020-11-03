@@ -14,7 +14,7 @@ import org.ifpb.database.repository.TurmaRepository;
 /**
  * Servlet implementation class RemoverTurma
  */
-@WebServlet("/RemoverTurma")
+@WebServlet("/turma/remover")
 public class RemoverTurmaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final TurmaRepository turmaRepository;

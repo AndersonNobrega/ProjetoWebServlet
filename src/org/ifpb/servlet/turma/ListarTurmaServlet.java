@@ -25,7 +25,6 @@ public class ListarTurmaServlet extends HttpServlet {
     public ListarTurmaServlet() {
         super();
 		this.turmaRepository = new TurmaRepository();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -34,7 +33,7 @@ public class ListarTurmaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request.getRequestDispatcher("/instituicao/turma/list_turma.jsp");
 
-		request.setAttribute("instituicoes", this.turmaRepository.findAll());
+		request.setAttribute("turmas", this.turmaRepository.findAll());
 		rd.forward(request, response);
 	}
 }
