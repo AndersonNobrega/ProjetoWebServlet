@@ -5,7 +5,6 @@
 <c:url value="/" var="servletHome"/>
 <c:url value="/curso/info" var="servletInfocurso"/>
 <c:url value="/cursoOfertado/criar" var="servletCriarCursoOfertado"/>
-<c:url value="/cursoOfertado/remover" var="servletRemoverCursoOfertado"/>
 
 <!DOCTYPE html>
 <html>
@@ -20,14 +19,14 @@
 	
 		<a href="${servletHome}">Home</a>
 	
-		<h2>Lista dos Curso Ofertados:</h2>
+		<h2>Lista dos Cursos Ofertados:</h2>
 		<ul>
 			<c:forEach items="${cursos}" var="curso">
 				<li>Coordenador: ${curso.coordenador} - Vagas: ${curso.vagas} - Instituição ID: ${curso.instituicaoId} - Curso ID: ${curso.cursoId}<a href="/home/curso/info?id=${curso.cursoId}"> Mais Informações</a></li>
 				<br>
 			</c:forEach>
 		</ul>
-		<a href="${servletCriarCursoOfertado}">Ofertar na Instituição</a> | <a href="${servletRemoverCurso}">Remover da Instituição</a>
+		<a href="${servletCriarCursoOfertado}">Ofertar na Instituição</a> | <a href="http://localhost:8080/home/instituicao/cursoOfertado/rm_cursoOfertado.jsp">Remover da Instituição</a>
 	</body>
 	
 </html>
