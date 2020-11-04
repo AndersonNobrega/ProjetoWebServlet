@@ -43,7 +43,9 @@ public class CriarTurmaServlet extends HttpServlet {
 		int vaga = Integer.parseInt(request.getParameter("vagas"));
 		int cursoOfertadoId = Integer.parseInt(request.getParameter("cursoOfertadoId"));
 		
-		this.turmaRepository.create(new Turma(vaga, cursoOfertadoId));
+		Turma turma = new Turma(vaga, cursoOfertadoId);
+		
+		this.turmaRepository.create(turma);
 		
 		response.sendRedirect("/home/turma");
 	}

@@ -9,7 +9,7 @@
 
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>SNES</title>
+		<title>Cadastrar Curso</title>
 	</head>
 	
 	<body>

@@ -17,11 +17,11 @@
 		<h1>${nome}</h1>
 		
 		<h2>Cursos</h2>
-		<a href="http://localhost:8080/home/instituicao/curso/ofer_curso.jsp">Ofertar Curso</a>
+		<a href="http://localhost:8080/home/instituicao/cursoOfertado/criar_cursoOfertado.jsp">Ofertar Curso</a>
 		<br><br>
-		<a href="http://localhost:8080/home/curso/remover">Remover Curso</a>
+		<a href="http://localhost:8080/home/instituicao/cursoOfertado/rm_cursoOfertado.jsp">Remover Curso</a>
 		<br><br>
-		<a href="http://localhost:8080/home/curso">Listar Cursos</a>
+		<a href="http://localhost:8080/home/cursoOfertado">Listar Cursos</a>
 		<br><br>
 		
 		<h2>Turma</h2>
