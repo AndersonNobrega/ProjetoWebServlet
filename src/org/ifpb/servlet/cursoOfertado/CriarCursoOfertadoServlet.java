@@ -32,7 +32,7 @@ public class CriarCursoOfertadoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/home/instituicao/cursoOfertado/criar_cursoOfertado.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/instituicao/cursoOfertado/criar_cursoOfertado.jsp");
 		rd.forward(request, response);
 	}
 
@@ -46,11 +46,11 @@ public class CriarCursoOfertadoServlet extends HttpServlet {
 		int instituicaoId = Integer.parseInt(request.getParameter("instituicaoId")); 
 		int cursoId= Integer.parseInt(request.getParameter("cursoId"));
 		
-		System.out.println("Coordenador: "+ coordenador);
+		//System.out.println("Coordenador: "+ coordenador);
 		
 		this.cursoOfertadoRepository.create(new CursoOfertado(coordenador, vagas, instituicaoId,cursoId));
 			
-		response.sendRedirect("/home/CursoOfertado");
+		response.sendRedirect("/home/cursoOfertado");
 	}
 
 }

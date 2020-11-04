@@ -20,7 +20,7 @@
 	
 		<a href="${servletHome}">Home</a>
 	
-		<h2>Informações do Curso Ofertado:</h2>
+		<h2>Lista dos Curso Ofertados:</h2>
 		<ul>
 			<c:forEach items="${cursos}" var="curso">
 				<li>Coordenador: ${curso.coordenador} - Vagas: ${curso.vagas} - Instituição ID: ${curso.instituicaoId} - Curso ID: ${curso.cursoId}<a href="/home/curso/info?id=${curso.cursoId}"> Mais Informações</a></li>
