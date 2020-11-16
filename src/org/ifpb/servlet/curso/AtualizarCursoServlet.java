@@ -45,7 +45,7 @@ public class AtualizarCursoServlet extends HttpServlet {
 		
 		this.cursoRepository.update(id, new Curso(nome));
 		
-		response.sendRedirect("/home/curso");
+		response.sendRedirect("/curso");
 	}
 
 }

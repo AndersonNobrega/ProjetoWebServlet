@@ -44,7 +44,7 @@ public class CriarCursoServlet extends HttpServlet {
 		
 		this.cursoRepository.create(new Curso(nome));
 		
-		response.sendRedirect("/home/curso");
+		response.sendRedirect("/curso");
 	}
 
 }

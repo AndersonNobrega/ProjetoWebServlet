@@ -46,7 +46,7 @@ public class CriarInstituicaoServlet extends HttpServlet {
 		
 		this.instituicaoRepository.create(new Instituicao(nome, reitor, cnpj));
 		
-		response.sendRedirect("/home/instituicao");
+		response.sendRedirect("/instituicao");
 	}
 
 }

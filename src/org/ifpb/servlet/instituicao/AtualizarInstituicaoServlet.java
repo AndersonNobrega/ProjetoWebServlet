@@ -47,7 +47,7 @@ public class AtualizarInstituicaoServlet extends HttpServlet {
 		
 		this.instituicaoRepository.update(id, new Instituicao(nome, reitor, cnpj));
 		
-		response.sendRedirect("/home/instituicao");
+		response.sendRedirect("/instituicao");
 	}
 
 }

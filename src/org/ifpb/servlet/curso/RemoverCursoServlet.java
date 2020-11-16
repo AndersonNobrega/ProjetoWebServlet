@@ -43,7 +43,7 @@ public class RemoverCursoServlet extends HttpServlet {
 		
 		this.cursoRepository.delete(id);
 		
-		response.sendRedirect("/home/curso");
+		response.sendRedirect("/curso");
 	}
 
 }

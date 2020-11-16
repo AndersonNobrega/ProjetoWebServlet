@@ -21,7 +21,7 @@
 		<h2>Instituições:</h2>
 		<ul>
 			<c:forEach items="${instituicoes}" var="instituicao">
-				<li>ID: ${instituicao.id} - Nome: ${instituicao.nome} - Reitor: ${instituicao.reitor} - CNPJ: ${instituicao.cnpj} <a href="/home/instituicao/info?id=${instituicao.id}">Mais Informações</a></li>
+				<li>ID: ${instituicao.id} - Nome: ${instituicao.nome} - Reitor: ${instituicao.reitor} - CNPJ: ${instituicao.cnpj} <a href="/instituicao/info?id=${instituicao.id}">Mais Informações</a></li>
 				<br>
 			</c:forEach>
 		</ul>

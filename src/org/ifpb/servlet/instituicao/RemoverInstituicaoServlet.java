@@ -43,7 +43,7 @@ public class RemoverInstituicaoServlet extends HttpServlet {
 		
 		this.instituicaoRepository.delete(id);
 		
-		response.sendRedirect("/home/instituicao");
+		response.sendRedirect("/instituicao");
 	}
 
 }
