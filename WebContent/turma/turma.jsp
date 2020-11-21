@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 	
@@ -9,8 +11,8 @@
 	</head>
 	
 	<body>
-		<h1>Turma</h1>
-		<h2>Aluno</h2>
+		<h1>Turma Id: ${id} </h1>
+
 		<a href="http://localhost:8080/home/turma/aluno/cad_aluno.jsp">Cadastrar Aluno</a>
 		<br>
 		<a href="http://localhost:8080/home/turma/aluno/rm_aluno.jsp">Remover Aluno</a>

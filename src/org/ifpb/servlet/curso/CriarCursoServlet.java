@@ -44,7 +44,8 @@ public class CriarCursoServlet extends HttpServlet {
 		
 		this.cursoRepository.create(new Curso(nome));
 		
-		response.sendRedirect("/curso");
+		response.sendRedirect("/ProjetoWebServlet/curso");
+		
 	}
 
 }

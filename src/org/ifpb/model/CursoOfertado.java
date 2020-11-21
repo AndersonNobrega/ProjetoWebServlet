@@ -1,16 +1,34 @@
 package org.ifpb.model;
 
 public class CursoOfertado {
-	private String coordenador;
+	private int id;
 	private int vagas;
 	private int instituicaoId;
 	private int cursoId;
-
+	private String coordenador;
+	
 	public CursoOfertado(String coordenador, int vagas, int instituicaoId, int cursoId) {
 		this.coordenador = coordenador;
 		this.vagas = vagas;
 		this.instituicaoId = instituicaoId;
 		this.cursoId = cursoId;
+	}
+
+	public CursoOfertado(int id, String coordenador, int vagas, int instituicaoId, int cursoId) {
+		this.coordenador = coordenador;
+		this.vagas = vagas;
+		this.instituicaoId = instituicaoId;
+		this.cursoId = cursoId;
+		this.id = id;
+	}
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getCoordenador() {
@@ -47,6 +65,6 @@ public class CursoOfertado {
 	
 	@Override
 	public String toString() {
-		return "Coordenador: " + this.getCoordenador() + " Vagas: " + this.getVagas();
+		return "Coordenador: " + this.getCoordenador() + " Vagas: " + this.getVagas() + " Id: " + this.getId();
 	}
 }

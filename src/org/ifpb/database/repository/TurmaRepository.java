@@ -42,6 +42,8 @@ public class TurmaRepository implements Repository<Turma> {
 			PreparedStatement statement = connection.prepareStatement(this.UPDATE_STATEMENT);
 		
 			statement.setInt(1, turma.getVagas());
+			statement.setInt(2, turma.getCursoOfertadoId());
+			statement.setInt(3, turma.getId());
 			
 			statement.executeUpdate();
 
@@ -81,7 +83,7 @@ public class TurmaRepository implements Repository<Turma> {
 			
 			ArrayList<Turma> listaTurma = new ArrayList<>();
 			while(result.next()) {
-				listaTurma.add(new Turma(result.getInt(2), result.getInt(3)));
+				listaTurma.add(new Turma(result.getInt(1), result.getInt(2), result.getInt(3)));
 			}
 
 			statement.close();
@@ -108,7 +110,7 @@ public class TurmaRepository implements Repository<Turma> {
 			
 			ArrayList<Turma> listaTurma = new ArrayList<>();
 			while(result.next()) {
-				listaTurma.add(new Turma(result.getInt(2), result.getInt(3)));
+				listaTurma.add(new Turma(result.getInt(1), result.getInt(2), result.getInt(3)));
 			}
 
 			statement.close();

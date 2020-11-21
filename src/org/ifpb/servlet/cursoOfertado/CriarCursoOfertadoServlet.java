@@ -46,11 +46,9 @@ public class CriarCursoOfertadoServlet extends HttpServlet {
 		int instituicaoId = Integer.parseInt(request.getParameter("instituicaoId")); 
 		int cursoId= Integer.parseInt(request.getParameter("cursoId"));
 		
-		//System.out.println("Coordenador: "+ coordenador);
-		
 		this.cursoOfertadoRepository.create(new CursoOfertado(coordenador, vagas, instituicaoId,cursoId));
 			
-		response.sendRedirect("/home/cursoOfertado");
+		response.sendRedirect("/ProjetoWebServlet/cursoOfertado");
 	}
 
 }

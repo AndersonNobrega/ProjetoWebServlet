@@ -45,6 +45,9 @@ public class CursoOfertadoRepository implements Repository<CursoOfertado> {
 		
 			statement.setString(1, cursoOfertado.getCoordenador());
 			statement.setInt(2, cursoOfertado.getVagas());
+			statement.setInt(3, cursoOfertado.getInstituicaoId());
+			statement.setInt(4, cursoOfertado.getCursoId());
+			statement.setInt(5, id);
 
 			statement.executeUpdate();
 
@@ -84,7 +87,7 @@ public class CursoOfertadoRepository implements Repository<CursoOfertado> {
 			
 			ArrayList<CursoOfertado> listaCursoOfertado = new ArrayList<>();
 			while(result.next()) {
-				listaCursoOfertado.add(new CursoOfertado(result.getString(2), result.getInt(3), result.getInt(4), result.getInt(5)));
+				listaCursoOfertado.add(new CursoOfertado(result.getInt(1), result.getString(2), result.getInt(3), result.getInt(4), result.getInt(5)));
 			}
 
 			statement.close();
@@ -111,7 +114,7 @@ public class CursoOfertadoRepository implements Repository<CursoOfertado> {
 			
 			ArrayList<CursoOfertado> listaCursoOfertado = new ArrayList<>();
 			while(result.next()) {
-				listaCursoOfertado.add(new CursoOfertado(result.getString(2), result.getInt(3), result.getInt(4), result.getInt(5)));
+				listaCursoOfertado.add(new CursoOfertado(result.getInt(1), result.getString(2), result.getInt(3), result.getInt(4), result.getInt(5)));
 			}
 
 			statement.close();

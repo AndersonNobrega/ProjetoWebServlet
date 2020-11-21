@@ -1,12 +1,27 @@
 package org.ifpb.model;
 
 public class Turma {
+	private int id;
 	private int vagas;
 	private int cursoOfertadoId;
 	
 	public Turma(int vagas, int cursoOfertadoId) {
 		this.vagas = vagas;
 		this.cursoOfertadoId = cursoOfertadoId;
+	}
+	
+	public Turma(int id ,int vagas, int cursoOfertadoId) {
+		this.id = id;
+		this.vagas = vagas;
+		this.cursoOfertadoId = cursoOfertadoId;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getCursoOfertadoId() {

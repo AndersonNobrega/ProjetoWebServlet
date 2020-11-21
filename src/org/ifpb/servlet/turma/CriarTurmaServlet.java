@@ -47,7 +47,7 @@ public class CriarTurmaServlet extends HttpServlet {
 		
 		this.turmaRepository.create(turma);
 		
-		response.sendRedirect("/home/turma");
+		response.sendRedirect("/ProjetoWebServlet/turma");
 	}
 
 }

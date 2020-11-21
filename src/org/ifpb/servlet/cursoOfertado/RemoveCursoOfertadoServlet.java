@@ -14,7 +14,7 @@ import org.ifpb.database.repository.CursoOfertadoRepository;
 /**
  * Servlet implementation class RemoveCursoOfertadoServlet
  */
-@WebServlet("/RemoveCursoOfertadoServlet")
+@WebServlet("/cursoOfertado/remover")
 public class RemoveCursoOfertadoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final CursoOfertadoRepository cursoOfertadoRepository;
@@ -33,7 +33,7 @@ public class RemoveCursoOfertadoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/home/cursoOfertado/rm_cursoOfertado.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/instituicao/cursoOfertado/rm_cursoOfertado.jsp");
 		rd.forward(request, response);
 	}
 
@@ -44,9 +44,10 @@ public class RemoveCursoOfertadoServlet extends HttpServlet {
 		
 		int id = Integer.parseInt(request.getParameter("id"));
 		
+		
 		this.cursoOfertadoRepository.delete(id);
 		
-		response.sendRedirect("/home/cursoOfertado");
+		response.sendRedirect("/ProjetoWebServlet/cursoOfertado");
 	}
 
 }

@@ -34,6 +34,9 @@ public class ListarTurmaServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("/instituicao/turma/list_turma.jsp");
 
 		request.setAttribute("turmas", this.turmaRepository.findAll());
+		
+		System.out.println(1);
+		
 		rd.forward(request, response);
 	}
 }

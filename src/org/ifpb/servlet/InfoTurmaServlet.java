@@ -9,23 +9,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.ifpb.database.repository.InstituicaoRepository;
-import org.ifpb.model.Instituicao;
+import org.ifpb.database.repository.TurmaRepository;
+import org.ifpb.model.Turma;
 
 /**
- * Servlet implementation class InfoInstituicaoServlet
+ * Servlet implementation class InfoTurmaServlet
  */
-@WebServlet("/instituicao/info")
-public class InfoInstituicaoServlet extends HttpServlet {
+@WebServlet("/turma/info")
+public class InfoTurmaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private final InstituicaoRepository instituicaoRepository;
+	private final TurmaRepository turmaRepository;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InfoInstituicaoServlet() {
-        super();
-        this.instituicaoRepository = new InstituicaoRepository();
+    public InfoTurmaServlet() {
+    	super();
+    	this.turmaRepository = new TurmaRepository();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -33,15 +34,16 @@ public class InfoInstituicaoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
+	
+		RequestDispatcher rd = request.getRequestDispatcher("/turma/turma.jsp");
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/instituicao/instituicao.jsp");
+		//int vagas = this.turmaRepository.findById(id).get(0).getVagas();
 		
-		String nome = this.instituicaoRepository.findById(id).get(0).getNome();
-		
-		request.setAttribute("nome", nome );
-		//request.setAttribute("id", id );
+		request.setAttribute("id", id );
 		
 		rd.forward(request, response);
+	
+	
 	}
 
 }

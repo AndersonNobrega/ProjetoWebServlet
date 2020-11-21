@@ -23,7 +23,7 @@
 	
 		<ul>
 			<c:forEach items="${turmas}" var="turma">
-				<li>Vagas: ${turma.vagas} - Id Curso Ofertado: ${turma.cursoOfertadoId}<a href="/home/turma/info?id=${turma.id}">Mais Informações</a></li>
+				<li>ID: ${turma.id} - Vagas: ${turma.vagas} - Id Curso Ofertado: ${turma.cursoOfertadoId}<a href="/ProjetoWebServlet/turma/info?id=${turma.id}">Mais Informações</a></li>
 				<br>
 			</c:forEach>
 		</ul>
