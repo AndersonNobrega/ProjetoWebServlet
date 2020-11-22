@@ -9,12 +9,12 @@ public class DBConnection {
 		// Initialize all the information regarding
 	    // Database Connection
 		String dbDriver = "com.mysql.jdbc.Driver";
-	    String dbURL = "jdbc:mysql://b0e6416f0e8760:2123432c@us-cdbr-east-02.cleardb.com/heroku_4d1a6a5d8ab68d5?reconnect=true";
+	    String dbURL = "jdbc:mysql://cnd29p1s3hpo0d0r:quefst49yohhtfdt@aqx5w9yc5brambgl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/c13gtp4sowytgmhx";
 	    
 	    // Database name to access
-	    String dbName = "heroku_4d1a6a5d8ab68d5";
-	    String dbUsername = "b0e6416f0e8760";
-	    String dbPassword = "2123432c";
+	    String dbName = "c13gtp4sowytgmhx";
+	    String dbUsername = "cnd29p1s3hpo0d0r";
+	    String dbPassword = "quefst49yohhtfdt";
 	  
 	    
 	    Class.forName(dbDriver);
