@@ -45,7 +45,7 @@ public class CriarAlunoServlet extends HttpServlet {
 		
 		this.alunoRepository.create(new Aluno(nome, rg, cpf, turmaId));
 		
-		response.sendRedirect("/aluno?turmaId=1");
+		response.sendRedirect("/aluno?turmaId=" + turmaId);
 		
 	}
 
