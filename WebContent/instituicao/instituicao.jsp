@@ -1,7 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:url value="/instituicao" var="servletListaInstituições"/>
+<c:url value="/instituicao" var="servletInstituicao"/>
+<c:url value="/cursoOfertado/criar" var="servletCriarCursoOfertado"/>
+<c:url value="/cursoOfertado/remover" var="servletRemoverCursoOfertado"/>
+<c:url value="/cursoOfertado" var="servletListarCursoOfertado"/>
+<c:url value="/turma" var="servletTurma"/>
+<c:url value="/turma/criar" var="servletCriarTurma"/>
+<c:url value="/turma/remover" var="servletRemoverTurma"/>
+<c:url value="/turma/atualizar" var="servletAtualizarTurma"/>
 
 <!DOCTYPE html>
 <html>
@@ -12,26 +19,26 @@
 	</head>
 	
 	<body>
-		<a href="${servletListaInstituições}">Instituições</a>
+		<a href="${servletInstituicao}">Instituições</a>
 		
 		<h1>${nome}</h1>
 		
 		<h2>Cursos</h2>
-		<a href="http://localhost:8080/cursoOfertado/criar">Ofertar Curso</a>
+		<a href="${servletCriarCursoOfertado}">Ofertar Curso</a>
 		<br><br>
-		<a href="http://localhost:8080/cursoOfertado/remover">Remover Curso</a>
+		<a href="${servletRemoverCursoOfertado}">Remover Curso</a>
 		<br><br>
-		<a href="http://localhost:8080/cursoOfertado">Listar Cursos</a>
+		<a href="${servletListarCursoOfertado}">Listar Cursos</a>
 		<br><br>
 		
 		<h2>Turma</h2>
-		<a href="http://localhost:8080/turma/criar">Cadastrar Turma</a>
+		<a href="${servletRemoverTurma}">Cadastrar Turma</a>
 		<br><br>
-		<a href="http://localhost:8080/turma/remover">Remover Turma</a>
+		<a href="${servletRemoverTurma}">Remover Turma</a>
 		<br><br>
-		<a href="http://localhost:8080/turma">Listar Turmas</a>
+		<a href="${servletTurma}">Listar Turmas</a>
 		<br><br>
-		<a href="http://localhost:8080/turma/atualizar">Atualizar Turma</a>
+		<a href="${servletAtualizarTurma}">Atualizar Turma</a>
 	</body>
 	
 </html>
