@@ -47,6 +47,8 @@ public class AtualizarAlunoServlet extends HttpServlet {
 		int turmaId = Integer.parseInt(request.getParameter("turmaId"));
 		
 		this.alunoRepository.update(id, new Aluno(nome, rg, cpf, turmaId));
+		
+		response.sendRedirect("/aluno?turmaId=" + turmaId);
 	}
 
 }

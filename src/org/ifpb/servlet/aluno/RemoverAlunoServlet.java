@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.ifpb.database.repository.AlunoRepository;
+import org.ifpb.model.Aluno;
 
 /**
  * Servlet implementation class RemoveAluno
@@ -40,9 +41,10 @@ public class RemoverAlunoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
+		Aluno aluno = this.alunoRepository.findById(id).get(0);
 		this.alunoRepository.delete(id);
 		
-		response.sendRedirect("/aluno");
+		response.sendRedirect("/aluno?turmaId=" + aluno.getTurmaId());
 	}
 
 }
