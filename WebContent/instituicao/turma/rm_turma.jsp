@@ -6,10 +6,12 @@
 	
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Remover Turma</title>
+		<title>SNES</title>
 	</head>
 	
 	<body>
+	
+		<h2>Remover Turma:</h2>
 		<form action="${servletRemoverTurma}" method="POST">
 			<b>ID: </b> <input type="text" name="id"/>
 			<br><br>

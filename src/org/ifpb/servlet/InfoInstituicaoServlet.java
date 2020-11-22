@@ -38,8 +38,7 @@ public class InfoInstituicaoServlet extends HttpServlet {
 		
 		String nome = this.instituicaoRepository.findById(id).get(0).getNome();
 		
-		request.setAttribute("nome", nome );
-		//request.setAttribute("id", id );
+		request.setAttribute("nome", nome);
 		
 		rd.forward(request, response);
 	}

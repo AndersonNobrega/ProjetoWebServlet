@@ -35,8 +35,6 @@ public class ListarTurmaServlet extends HttpServlet {
 
 		request.setAttribute("turmas", this.turmaRepository.findAll());
 		
-		System.out.println(1);
-		
 		rd.forward(request, response);
 	}
 }

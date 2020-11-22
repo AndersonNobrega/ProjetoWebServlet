@@ -1,23 +1,26 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:url value="/CriaAluno" var="servletNovoAluno"/>
+<c:url value="/aluno/criar" var="servletNovoAluno"/>
 
 <!DOCTYPE html>
 <html>
 
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Insert title here</title>
+		<title>SNES</title>
 	</head>
 	
 	<body>
-		<form action="${servletNovoAluno}" method="post">
+		<h2>Cadastrar Aluno:</h2>
+		<form action="${servletNovoAluno}" method="POST">
 				<b>Nome: </b><input type="text" name="nome"/>
-				<br>
-				<b>rg: </b><input type="text" name="rg"/>
-				<br>
-				<b>cpf: </b><input type="text" name="cpf"/>
-				<br>
+				<br><br>
+				<b>RG: </b><input type="text" name="rg"/>
+				<br><br>
+				<b>CPF: </b><input type="text" name="cpf"/>
+				<br><br>
+				<b>ID da Turma: </b><input type="text" name="turmaId"/>
+				<br><br>
 				<input type="submit"/>
 			</form>
 	</body>

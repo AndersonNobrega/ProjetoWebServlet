@@ -14,10 +14,9 @@
 	
 	<body>
 		
-		<h1>Remover Curso da Instituição</h1>
-		
+		<h2>Remover Curso da Instituição:</h2>
 		<form action="${servletRemoverCursoOfertado}" method="POST">
-			<b>ID: </b> <input type="text" name="id"/>
+			<b>ID do Curso: </b> <input type="text" name="id"/>
 			<br><br>
 			<input type="submit"/>
 		</form>

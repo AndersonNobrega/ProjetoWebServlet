@@ -4,15 +4,15 @@
 	
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Atualiza Turma</title>
+		<title>SNES</title>
 	</head>
 	
 	<body>
 		<form>
 			Nome:<input type="number" name="vagas"/>
-			<br>
+			<br><br>
 			ID:<input type="number" name="cursoOfertadoId"/>
-			<br>
+			<br><br>
 			<input type="submit"/>
 		</form>
 	</body>

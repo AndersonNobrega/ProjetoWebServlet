@@ -8,7 +8,7 @@
 	
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Cadastra Turma</title>
+		<title>SNES</title>
 	</head>
 	
 	<body>
@@ -16,9 +16,9 @@
 		<h2>Cadastrar Turma:</h2>
 		<form action="${servletCriarTurma}" method="POST">
 			<b>Vagas: </b><input type="number" name="vagas"/>
-			<br>
+			<br><br>
 			<b>ID do Curso: </b><input type="number" name="cursoOfertadoId"/>
-			<br>
+			<br><br>
 			<input type="submit"/>
 		</form>
 	</body>

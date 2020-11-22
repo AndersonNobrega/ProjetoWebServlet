@@ -11,7 +11,7 @@
 	</head>
 	
 	<body>
-		<h1>${curso.nome}</h1>
+		<h2>Curso: ${curso.nome}</h2>
 	</body>
 	
 </html>

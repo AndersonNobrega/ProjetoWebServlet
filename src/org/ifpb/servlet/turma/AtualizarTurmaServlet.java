@@ -47,7 +47,7 @@ public class AtualizarTurmaServlet extends HttpServlet {
 		
 		this.turmaRepository.create(new Turma(vaga, cursoOfertadoId));
 		
-		response.sendRedirect("/home/turma");
+		response.sendRedirect("/turma");
 	}
 
 }

@@ -23,7 +23,7 @@
 		<h2>Lista dos Cursos Ofertados:</h2>
 		<ul>
 			<c:forEach items="${cursos}" var="curso">
-				<li>ID: ${curso.id} - Coordenador: ${curso.coordenador} - Vagas: ${curso.vagas} - Instituição ID: ${curso.instituicaoId} - Curso ID: ${curso.cursoId}<a href="/ProjetoWebServlet/curso/info?id=${curso.cursoId}"> Mais Informações</a></li>
+				<li>ID: ${curso.id} - Coordenador: ${curso.coordenador} - Vagas: ${curso.vagas} - Instituição ID: ${curso.instituicaoId} - Curso ID: ${curso.cursoId}<a href="/curso/info?id=${curso.cursoId}"> Mais Informações</a></li>
 				<br>
 			</c:forEach>
 		</ul>

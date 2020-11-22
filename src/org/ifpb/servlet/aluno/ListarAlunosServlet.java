@@ -30,10 +30,10 @@ public class ListarAlunosServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		int turmaId = Integer.parseInt(request.getParameter("turmaId"));
 		RequestDispatcher rd = request.getRequestDispatcher("/turma/aluno/list_aluno.jsp");
 	
-		request.setAttribute("instituicoes", this.alunoRepository.findAll());
+		request.setAttribute("alunos", this.alunoRepository.findAllByTurma(turmaId));
 		rd.forward(request, response);
 	}
 }

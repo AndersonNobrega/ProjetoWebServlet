@@ -13,7 +13,7 @@
 	
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Lista Turmas</title>
+		<title>SNES</title>
 	</head>
 	
 	<body>
@@ -23,7 +23,7 @@
 	
 		<ul>
 			<c:forEach items="${turmas}" var="turma">
-				<li>ID: ${turma.id} - Vagas: ${turma.vagas} - Id Curso Ofertado: ${turma.cursoOfertadoId}<a href="/ProjetoWebServlet/turma/info?id=${turma.id}">Mais Informações</a></li>
+				<li>ID: ${turma.id} - Vagas: ${turma.vagas} - ID do Curso Ofertado: ${turma.cursoOfertadoId} <a href="/turma/info?id=${turma.id}">Mais Informações</a></li>
 				<br>
 			</c:forEach>
 		</ul>

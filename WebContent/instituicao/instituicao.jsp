@@ -17,21 +17,21 @@
 		<h1>${nome}</h1>
 		
 		<h2>Cursos</h2>
-		<a href="http://localhost:8080/ProjetoWebServlet/instituicao/cursoOfertado/criar_cursoOfertado.jsp">Ofertar Curso</a>
+		<a href="http://localhost:8080/cursoOfertado/criar">Ofertar Curso</a>
 		<br><br>
-		<a href="http://localhost:8080/ProjetoWebServlet/instituicao/cursoOfertado/rm_cursoOfertado.jsp">Remover Curso</a>
+		<a href="http://localhost:8080/cursoOfertado/remover">Remover Curso</a>
 		<br><br>
-		<a href="http://localhost:8080/ProjetoWebServlet/cursoOfertado">Listar Cursos</a>
+		<a href="http://localhost:8080/cursoOfertado">Listar Cursos</a>
 		<br><br>
 		
 		<h2>Turma</h2>
-		<a href="http://localhost:8080/ProjetoWebServlet/instituicao/turma/cad_turma.jsp">Cadastrar Turma</a>
+		<a href="http://localhost:8080/turma/criar">Cadastrar Turma</a>
 		<br><br>
-		<a href="http://localhost:8080/ProjetoWebServlet/instituicao/turma/rm_turma.jsp">Remover Turma</a>
+		<a href="http://localhost:8080/turma/remover">Remover Turma</a>
 		<br><br>
-		<a href="http://localhost:8080/ProjetoWebServlet/turma">Listar Turmas</a>
+		<a href="http://localhost:8080/turma">Listar Turmas</a>
 		<br><br>
-		<a href="http://localhost:8080/ProjetoWebServlet/instituicao/turma/att_turma.jsp">Atualizar Turma</a>
+		<a href="http://localhost:8080/turma/atualizar">Atualizar Turma</a>
 	</body>
 	
 </html>

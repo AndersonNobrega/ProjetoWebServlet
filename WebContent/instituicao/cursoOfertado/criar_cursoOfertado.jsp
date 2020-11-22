@@ -12,14 +12,14 @@
 	<body>
 		<h2>Ofertar Curso:</h2>
 		<form action="${servletCriarCursoOfertado}" method="POST">
-			<b>coordenador: </b><input type="text" name="coordenador"/>
-			<br>
-			<b>vagas: </b><input type="text" name="vagas"/>
-			<br>
-			<b>instituicaoId: </b><input type="text" name="instituicaoId"/>
-			<br>
-			<b>cursoId: </b><input type="text" name="cursoId"/>
-			<br>
+			<b>Coordenador: </b><input type="text" name="coordenador"/>
+			<br><br>
+			<b>Vagas: </b><input type="text" name="vagas"/>
+			<br><br>
+			<b>ID da Instituicao: </b><input type="text" name="instituicaoId"/>
+			<br><br>
+			<b>ID do Curso: </b><input type="text" name="cursoId"/>
+			<br><br>
 			<input type="submit"/>
 		</form>
 	</body>

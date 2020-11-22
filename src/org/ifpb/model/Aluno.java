@@ -1,15 +1,25 @@
 package org.ifpb.model;
 
 public class Aluno {
+	private int id;
 	private String nome;
 	private String rg;
 	private String cpf;
 	private int turmaId;
 	
-	public Aluno(String nome, String rg, String cpf) {
+	public Aluno(int id, String nome, String rg, String cpf, int turmaId) {
+		this.id = id;
 		this.nome = nome;
 		this.rg = rg;
 		this.cpf = cpf;
+		this.turmaId = turmaId;
+	}
+	
+	public Aluno(String nome, String rg, String cpf, int turmaId) {
+		this.nome = nome;
+		this.rg = rg;
+		this.cpf = cpf;
+		this.turmaId = turmaId;
 	}
 
 	public String getRg() {
@@ -47,5 +57,13 @@ public class Aluno {
 	@Override
 	public String toString() {
 		return "Nome: " + this.getNome() + " RG: " + this.getRg() + " CPF: " + this.getCpf();
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

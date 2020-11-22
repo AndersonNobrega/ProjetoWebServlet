@@ -13,7 +13,7 @@ import org.ifpb.database.repository.AlunoRepository;
 import org.ifpb.model.Aluno;
 
 
-@WebServlet("/CriaAluno")
+@WebServlet("/aluno/criar")
 public class CriarAlunoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private final AlunoRepository alunoRepository;   
@@ -41,10 +41,11 @@ public class CriarAlunoServlet extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String rg = request.getParameter("rg");
 		String cpf = request.getParameter("cpf");
+		int turmaId = Integer.parseInt(request.getParameter("turmaId"));
 		
-		this.alunoRepository.create(new Aluno(nome, rg, cpf));
+		this.alunoRepository.create(new Aluno(nome, rg, cpf, turmaId));
 		
-		response.sendRedirect("/home/aluno");
+		response.sendRedirect("/aluno?turmaId=1");
 		
 	}
 

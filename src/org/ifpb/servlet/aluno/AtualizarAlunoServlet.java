@@ -15,7 +15,7 @@ import org.ifpb.model.Aluno;
 /**
  * Servlet implementation class AtualizaAluno
  */
-@WebServlet("/AtualizaAluno")
+@WebServlet("/aluno/atualizar")
 public class AtualizarAlunoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final AlunoRepository alunoRepository;
@@ -32,7 +32,7 @@ public class AtualizarAlunoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/home/instituicao/att_insti.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/turma/aluno/att_aluno.jsp");
 		rd.forward(request, response);
 	}
 
@@ -44,8 +44,9 @@ public class AtualizarAlunoServlet extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String rg = request.getParameter("reitor");
 		String cpf = request.getParameter("cnpj");
+		int turmaId = Integer.parseInt(request.getParameter("turmaId"));
 		
-		this.alunoRepository.update(id, new Aluno(nome,rg,cpf));
+		this.alunoRepository.update(id, new Aluno(nome, rg, cpf, turmaId));
 	}
 
 }

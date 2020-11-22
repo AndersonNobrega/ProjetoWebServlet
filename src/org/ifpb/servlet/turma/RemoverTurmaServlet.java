@@ -45,7 +45,7 @@ public class RemoverTurmaServlet extends HttpServlet {
 		
 		this.turmaRepository.delete(id);
 		
-		response.sendRedirect("/ProjetoWebServlet/turma");
+		response.sendRedirect("/turma");
 	}
 
 }

@@ -48,7 +48,7 @@ public class CriarCursoOfertadoServlet extends HttpServlet {
 		
 		this.cursoOfertadoRepository.create(new CursoOfertado(coordenador, vagas, instituicaoId,cursoId));
 			
-		response.sendRedirect("/ProjetoWebServlet/cursoOfertado");
+		response.sendRedirect("/cursoOfertado");
 	}
 
 }

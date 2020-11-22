@@ -18,15 +18,12 @@ import org.ifpb.model.Turma;
 @WebServlet("/turma/info")
 public class InfoTurmaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private final TurmaRepository turmaRepository;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public InfoTurmaServlet() {
     	super();
-    	this.turmaRepository = new TurmaRepository();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -36,8 +33,6 @@ public class InfoTurmaServlet extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 	
 		RequestDispatcher rd = request.getRequestDispatcher("/turma/turma.jsp");
-		
-		//int vagas = this.turmaRepository.findById(id).get(0).getVagas();
 		
 		request.setAttribute("id", id );
 		

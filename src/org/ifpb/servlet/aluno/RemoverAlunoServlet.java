@@ -14,7 +14,7 @@ import org.ifpb.database.repository.AlunoRepository;
 /**
  * Servlet implementation class RemoveAluno
  */
-@WebServlet("/RemoveAluno")
+@WebServlet("/aluno/remover")
 public class RemoverAlunoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final AlunoRepository alunoRepository;
@@ -31,7 +31,7 @@ public class RemoverAlunoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("turma/aluno/rm_aluno.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/turma/aluno/rm_aluno.jsp");
 		rd.forward(request, response);
 	}
 
@@ -41,7 +41,8 @@ public class RemoverAlunoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		this.alunoRepository.delete(id);
-		response.sendRedirect("/home/instituicao");
+		
+		response.sendRedirect("/aluno");
 	}
 
 }
